@@ -7,6 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', service: 'portfolio-api' });
+});
+
 // Routes
 app.use('/api/contact', require('./routes/contact'));
 app.use('/api/portfolio', require('./routes/portfolio'));

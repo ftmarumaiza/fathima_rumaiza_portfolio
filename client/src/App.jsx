@@ -67,6 +67,7 @@ const PORTFOLIO = {
 };
 
 const navItems = ['about', 'skills', 'projects', 'education', 'contact'];
+const API_BASE_URL = process.env.REACT_APP_API_URL || '';
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
@@ -1001,7 +1002,7 @@ function ContactForm() {
     setStatus(null);
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
