@@ -100,6 +100,7 @@ const styles = `
     color: var(--ink);
     font-family: var(--sans);
     line-height: 1.6;
+    overflow-x: hidden;
   }
 
   a { color: inherit; }
@@ -790,12 +791,34 @@ const styles = `
     .nav-links { display: none; }
     .hero {
       min-height: auto;
-      padding-top: 48px;
+      padding-top: 44px;
+      padding-bottom: 42px;
       grid-template-columns: 1fr;
-      gap: 30px;
+      gap: 28px;
     }
-    .hero h1 { font-size: clamp(3rem, 18vw, 4.9rem); }
-    .portrait { min-height: 460px; }
+    .hero h1 {
+      font-size: clamp(3rem, 15vw, 4.9rem);
+      line-height: 0.95;
+    }
+    .hero-copy {
+      max-width: 100%;
+      font-size: 1rem;
+    }
+    .hero-panel {
+      max-width: 430px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .portrait {
+      min-height: auto;
+      padding: 24px;
+    }
+    .portrait-top {
+      font-size: 0.72rem;
+    }
+    .portrait-bottom h2 {
+      font-size: 1.75rem;
+    }
     .stats-strip,
     .skill-grid,
     .project-grid,
@@ -804,7 +827,10 @@ const styles = `
     .contact-grid {
       grid-template-columns: 1fr;
     }
-    .stats-strip { margin-bottom: 0; }
+    .stats-strip {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-bottom: 0;
+    }
     .section { padding: 62px 20px; }
     .section-head { display: block; }
     .section-note { margin-top: 14px; }
@@ -821,10 +847,74 @@ const styles = `
       padding-left: 16px;
       padding-right: 16px;
     }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+    }
+    .hero {
+      padding-top: 34px;
+      gap: 22px;
+    }
+    .kicker {
+      font-size: 0.7rem;
+      margin-bottom: 14px;
+    }
+    .kicker::before {
+      width: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.85rem, 18vw, 4.15rem);
+    }
     .hero-actions { display: grid; }
     .btn { width: 100%; }
-    .photo-frame { width: min(220px, 70%); }
-    .stat { min-height: auto; }
+    .portrait {
+      padding: 20px;
+      gap: 18px;
+    }
+    .portrait-top {
+      display: grid;
+      gap: 4px;
+    }
+    .photo-frame {
+      width: min(214px, 74%);
+      transform: rotate(-1deg);
+    }
+    .photo-frame::before {
+      inset: 10px -10px -10px 10px;
+    }
+    .portrait-bottom h2 {
+      font-size: 1.55rem;
+    }
+    .portrait-bottom p {
+      font-size: 0.9rem;
+    }
+    .stats-strip {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .stat {
+      min-height: auto;
+      padding: 18px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 12vw, 3rem);
+    }
+    .project-card,
+    .skill-card,
+    .cert-card {
+      padding: 20px;
+    }
+    .project-visual,
+    .project-visual svg {
+      min-height: 112px;
+      height: 112px;
+    }
+    .cert-card {
+      display: grid;
+    }
+    .contact-link strong {
+      font-size: 0.95rem;
+    }
     .about-list div { display: grid; gap: 4px; }
   }
 `;
